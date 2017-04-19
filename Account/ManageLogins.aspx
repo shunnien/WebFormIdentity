@@ -1,10 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ManageLogins.aspx.cs" Inherits="Account_ManageLogins" %>
 
-<asp:content id="BodyContent" contentplaceholderid="MainContent" runat="server">
+<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Manage your external logins.</h2>
     <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
-            <p class="text-success"><%: SuccessMessage %></p>
-        </asp:PlaceHolder>
+        <p class="text-success"><%: SuccessMessage %></p>
+    </asp:PlaceHolder>
     <div>
         <section id="externalLoginsForm">
 
@@ -38,4 +40,4 @@
     <div>
         <uc:OpenAuthProviders runat="server" ReturnUrl="~/Account/ManageLogins" />
     </div>
-</asp:content>
+</asp:Content>
